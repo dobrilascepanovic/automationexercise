@@ -13,6 +13,7 @@ namespace AutomationExerciseFreework.Pages
         public By header = By.Id("header");
         public By loginLink = By.ClassName("fa-lock");
         public By deleteAcc = By.ClassName("fa-trash-o");
+        public By contactLink = By.ClassName("fa-envelope");
 
 
 

@@ -20,5 +20,7 @@ namespace AutomationExerciseFreework.Helpers
         public const string ZipCode = "11000";
         public const string Phone = "0008514914";
 
+        public const string Subjekt = "Request";
+        public const string Message = "Would you be  able  to remove all ads from your website please?";
     }
 }
