@@ -74,7 +74,7 @@ namespace AutomationExerciseFreework.Steps
 
         }
 
-        [When(@"submits the signup form")]
+        [StepDefinition(@"submits the signup form")]
         public void WhenSubmitsTheSignupForm()
         {
             SignupPage sp = new SignupPage(Driver);
@@ -91,6 +91,35 @@ namespace AutomationExerciseFreework.Steps
             ut.ClickOnElement(acp.continueBtn);
 
         }
+        [Given(@"user reregisters new account with '(.*)' name")]
+        public void GivenUserReregistersNewAccount(string name)
+        {
+            GivenUserOpensSingInPage();
+            GivenEntersNameAndValidEmailAddres(name);
+            GivenUserClicksOnSingnUpButton();
+            WhenUserFillsInAllRequiresFields();
+            WhenSubmitsTheSignupForm();
+            AccountCreatedPage acp = new AccountCreatedPage(Driver);
+            ut.ClickOnElement(acp.continueBtn);
+
+        }
+
+        [When(@"user selects option for deleting the account")]
+        public void WhenUserSelectsOptionForDeletingTheAccount()
+        {
+            HeaderPage hp = new HeaderPage(Driver);
+            ut.ClickOnElement(hp.deleteAcc);
+        }
+
+        [Then(@"account will be deleted with '(.*)' message")]
+        public void ThenAccountWillBeDeletedWithMessage(string message)
+        {
+            AccountDeletedPage adp = new AccountDeletedPage(Driver);
+            Assert.True(ut.TextPresentInElement(message), "Failed to Deleted Account!");
+            ut.ClickOnElement(adp.contDelBtn);
+        }
+
+
 
     }
 }

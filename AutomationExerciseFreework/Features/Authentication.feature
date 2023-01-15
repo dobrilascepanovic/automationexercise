@@ -19,3 +19,9 @@ Scenario: User can log in
 	Then user will get 'Account Created!' success message
 		And user will be logged in
 
+Scenario: User can delete their account
+      Given user reregisters new account with 'Dobrila' name
+	  When user selects option for deleting the account
+	  Then account will be deleted with 'Account Deleted!' message
+		
+

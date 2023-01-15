@@ -36,7 +36,6 @@ namespace AutomationExerciseFreework.Helpers
             var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator)).SendKeys(text);
         }
-
         public bool ElementIsDisplayed(By selector)
         {
             var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
@@ -51,6 +50,22 @@ namespace AutomationExerciseFreework.Helpers
         var selectElement = new SelectElement(dropdown);
         selectElement.SelectByValue(option);
         }
+
+        internal void ClickOnElement(object viewCart)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string ReturnTextElement(object prodName)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void ClickOnElement(object vieWCard)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool TextPresentInElement(string text)
         {
             By headline = By.XPath("//*[contains(text(),'" + text + "')]");
@@ -58,6 +73,12 @@ namespace AutomationExerciseFreework.Helpers
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(headline)).Displayed;
 
 
+        }
+        public string ReturnTextElement(By locator)
+
+        {
+            return _driver.FindElement(locator).GetAttribute("textContent");
+            //return _driver.FindElement(locator).Text;
         }
 
     }

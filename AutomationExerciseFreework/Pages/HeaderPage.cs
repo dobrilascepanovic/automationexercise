@@ -14,8 +14,8 @@ namespace AutomationExerciseFreework.Pages
         public By loginLink = By.ClassName("fa-lock");
         public By deleteAcc = By.ClassName("fa-trash-o");
         public By contactLink = By.ClassName("fa-envelope");
-
-
+        public By product = By.ClassName("card_travel");
+        internal object productlink;
 
         public HeaderPage(IWebDriver driver)
         {
